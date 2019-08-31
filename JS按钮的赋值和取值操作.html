@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="text" /><br><br>
+	<input type="text" /><br><br>
+	<input type="text" /><br><br>
+	<input type="text" /><br><br>
+	<input type="text" /><br><br>
+	<input type="text" /><br><br>
+	<input type="text" /><br><br>
+	<input type="text" /><br><br>
+	<button>赋值</button><br><br>
+	<button>取值</button><br><br>
+<script>
+	// 获取按钮的元素
+	// 为了让浏览器运行的快一些，一般都是把那些对象放到数组里面
+	var inpArr = document.getElementsByTagName("input");
+	var btnArr = document.getElementsByTagName("button");
+	// 给第一个按钮注册事件
+	btnArr[0].onclick = function () {
+		for (var i = 0; i <= inpArr.length; i++) {
+			var inpArr[i].value = i;
+		}
+	}
+	// 给第二个按钮注册事件
+	btnArr[1].onclick = function () {
+	// 因为是要取值，所以要用一个数组来收集
+		var newArr = [];
+		for (var i = 0; i < newArr.length; i++) {
+			// 该push()方法将一个或多个元素添加到数组的末尾并返回数组的新长度。
+			newArr.push(inpArr[i].value);
+		} 
+		 // 该join()方法通过连接数组（或类数组对象）中的所有元素（由逗号或指定的分隔符字符串分隔）来创建并返回新字符串。如果数组只有一个项目，那么将返回该项目而不使用分隔符。
+		console.log(newArr.join(""));
+	}
+</script>
+</body>
+</html>
